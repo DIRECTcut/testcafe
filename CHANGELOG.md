@@ -1,5 +1,69 @@
 # Changelog
 
+## v1.14.0 (2021-3-31)
+
+## Enhancements
+
+### ⚙ Scroll Actions ([PR #6066](https://github.com/DevExpress/testcafe/pull/6066))
+
+When TestCafe interacts with elements on the page, it scrolls the page automatically to reach those elements.
+
+This release introduces actions that allow you to scroll webpage elements manually.
+
+* [t.scroll](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/scroll.md) - scrolls the element to a specified position
+* [t.scrollBy](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/scrollBy.md) - scrolls the element by the specified number of pixels
+* [t.scrollIntoView](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/scrollIntoView.md) - scrolls the element into view
+
+You can use the `t.scroll` action to scroll an element to a position:
+
+```js
+ import { Selector } from 'testcafe';
+
+ fixture`Scroll Action`
+     .page('http://example.com');
+
+ test('Scroll the container', async t => {
+     const container = Selector('#container');
+
+     await t
+         .scroll(container, 'bottomRight')
+ });
+ ```
+
+ `t.scrollBy` allows you to scroll an element (or the webpage) by a set amount of pixels. The example below scrolls the webpage 200px up and 500px to the right:
+
+ ```js
+ import 'testcafe'
+
+ fixture`Scroll Action`
+     .page('http://example.com');
+
+ test('Scroll the webpage', async t => {
+     await t
+         .scrollBy(500, -200)
+ });
+ ```
+
+Use `t.scrollIntoView` to scroll an element into view:
+
+```js
+ import { Selector } from 'testcafe';
+
+ fixture `Scroll Actions`
+     .page `http://www.example.com/`;
+
+ test('Scroll element into view', async t => {
+     const target = Selector('#target')
+
+     await t
+         .scrollIntoView(target)
+ });
+ ```
+
+## Bug Fixes
+
+* Fixed an error that caused [expect.contains](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/expect/contains.md) assertions to display `undefined` instead of a string value in diffs ([#5473](https://github.com/DevExpress/testcafe/issues/5473))
+
 ## v1.13.0 (2021-03-22)
 
 This release adds support for custom paths to the configuration file, support for Microsoft Edge on Linux systems, and multiple bugfixes.
@@ -8,12 +72,12 @@ This release adds support for custom paths to the configuration file, support fo
 
 #### :gear: Specify Custom Path to the TestCafe Configuration File ([PR #6035](https://github.com/DevExpress/testcafe/pull/6035) by [@Chris-Greaves](https://github.com/Chris-Greaves))
 
-TestCafe now allows you to specify a custom path to the [configuration file](../documentation/reference/configuration-file.md).
+TestCafe now allows you to specify a custom path to the [configuration file](https://devexpress.github.io/testcafe/documentation/reference/configuration-file.md).
 
 To set the path, use one of the following options:
 
-* the [--config-file CLI option](../documentation/reference/command-line-interface.md#--config-file-path)
-* the [configFile option of the createTestCafe function](../documentation/reference/testcafe-api/global/createtestcafe.md#options)
+* the [--config-file CLI option](https://devexpress.github.io/testcafe/documentation/reference/command-line-interface.md#--config-file-path)
+* the [configFile option of the createTestCafe function](https://devexpress.github.io/testcafe/documentation/reference/testcafe-api/global/createtestcafe.md#options)
 
 #### Add Support for Microsoft Edge on Linux ([PR testcafe-browser-tools/#210](https://github.com/DevExpress/testcafe-browser-tools/pull/210) by [@dcsaszar](https://github.com/dcsaszar))
 
@@ -25,7 +89,7 @@ testcafe edge tests/test.js
 
 #### :gear: Deprecated the `t.setPageLoadTimeout` method ([PR #5979](https://github.com/DevExpress/testcafe/pull/5979))
 
-Starting with v1.13.0, the [t.setPageLoadTimeout](../documentation/reference/test-api/testcontroller/setpageloadtimeout.md) method is deprecated. To set the page load timeout, use the new [test.timeouts](../documentation/reference/test-api/test/timeouts.md) method.
+Starting with v1.13.0, the [t.setPageLoadTimeout](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/setpageloadtimeout.md) method is deprecated. To set the page load timeout, use the new [test.timeouts](https://devexpress.github.io/testcafe/documentation/reference/test-api/test/timeouts.md) method.
 
 ```js
 fixture`Setting Timeouts`
@@ -40,7 +104,7 @@ test
     })
 ```
 
-You can also use `test.timeouts` to set the [pageRequestTimeout](../documentation/reference/configuration-file.md#pagerequesttimeout) and [ajaxRequestTimeout](../documentation/reference/configuration-file.md#ajaxrequesttimeout).
+You can also use `test.timeouts` to set the [pageRequestTimeout](https://devexpress.github.io/testcafe/documentation/reference/configuration-file.md#pagerequesttimeout) and [ajaxRequestTimeout](https://devexpress.github.io/testcafe/documentation/reference/configuration-file.md#ajaxrequesttimeout).
 
 ```js
 fixture`Setting Timeouts`
