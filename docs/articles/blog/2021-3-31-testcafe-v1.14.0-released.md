@@ -15,7 +15,7 @@ This release brings scroll actions and a bugfix.
 
 When TestCafe interacts with elements on the page, it scrolls the page automatically to reach those elements.
 
-This release introduces actions that allow you to scroll webpage elements manually.
+This release introduces actions that allow you to manually scroll the webpage and its elements.
 
 * [t.scroll](../documentation/reference/test-api/testcontroller/scroll.md) - scrolls the element to a specified position
 * [t.scrollBy](../documentation/reference/test-api/testcontroller/scrollBy.md) - scrolls the element by the specified number of pixels
