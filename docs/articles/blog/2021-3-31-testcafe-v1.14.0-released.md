@@ -19,7 +19,7 @@ This release introduces actions that allow you to manually scroll the webpage an
 
 * [t.scroll](../documentation/reference/test-api/testcontroller/scroll.md) - scrolls the element to a specified position
 * [t.scrollBy](../documentation/reference/test-api/testcontroller/scrollBy.md) - scrolls the element by the specified number of pixels
-* [t.scrollIntoView](../documentation/reference/test-api/testcontroller/scrollIntoView.md) - scrolls the element into view
+* [t.scrollIntoView](../documentation/reference/test-api/testcontroller/scrollintoview.md) - scrolls the element into view
 
 You can use the `t.scroll` action to scroll an element to a position:
 

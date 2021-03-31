@@ -10,9 +10,9 @@ When TestCafe interacts with elements on the page, it scrolls the page automatic
 
 This release introduces actions that allow you to scroll webpage elements manually.
 
-* [t.scroll](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/scroll.md) - scrolls the element to a specified position
-* [t.scrollBy](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/scrollBy.md) - scrolls the element by the specified number of pixels
-* [t.scrollIntoView](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/scrollIntoView.md) - scrolls the element into view
+* [t.scroll](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/scroll.html) - scrolls the element to a specified position
+* [t.scrollBy](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/scrollby.html) - scrolls the element by the specified number of pixels
+* [t.scrollIntoView](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/scrollintoview.html) - scrolls the element into view
 
 You can use the `t.scroll` action to scroll an element to a position:
 
@@ -62,7 +62,7 @@ Use `t.scrollIntoView` to scroll an element into view:
 
 ## Bug Fixes
 
-* Fixed an error that caused [expect.contains](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/expect/contains.md) assertions to display `undefined` instead of a string value in diffs ([#5473](https://github.com/DevExpress/testcafe/issues/5473))
+* Fixed an error that caused [expect.contains](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/expect/contains.html) assertions to display `undefined` instead of a string value in diffs ([#5473](https://github.com/DevExpress/testcafe/issues/5473))
 
 ## v1.13.0 (2021-03-22)
 
@@ -72,12 +72,12 @@ This release adds support for custom paths to the configuration file, support fo
 
 #### :gear: Specify Custom Path to the TestCafe Configuration File ([PR #6035](https://github.com/DevExpress/testcafe/pull/6035) by [@Chris-Greaves](https://github.com/Chris-Greaves))
 
-TestCafe now allows you to specify a custom path to the [configuration file](https://devexpress.github.io/testcafe/documentation/reference/configuration-file.md).
+TestCafe now allows you to specify a custom path to the [configuration file](https://devexpress.github.io/testcafe/documentation/reference/configuration-file.html).
 
 To set the path, use one of the following options:
 
-* the [--config-file CLI option](https://devexpress.github.io/testcafe/documentation/reference/command-line-interface.md#--config-file-path)
-* the [configFile option of the createTestCafe function](https://devexpress.github.io/testcafe/documentation/reference/testcafe-api/global/createtestcafe.md#options)
+* the [--config-file CLI option](https://devexpress.github.io/testcafe/documentation/reference/command-line-interface.html#--config-file-path)
+* the [configFile option of the createTestCafe function](https://devexpress.github.io/testcafe/documentation/reference/testcafe-api/global/createtestcafe.html#options)
 
 #### Add Support for Microsoft Edge on Linux ([PR testcafe-browser-tools/#210](https://github.com/DevExpress/testcafe-browser-tools/pull/210) by [@dcsaszar](https://github.com/dcsaszar))
 
@@ -89,7 +89,7 @@ testcafe edge tests/test.js
 
 #### :gear: Deprecated the `t.setPageLoadTimeout` method ([PR #5979](https://github.com/DevExpress/testcafe/pull/5979))
 
-Starting with v1.13.0, the [t.setPageLoadTimeout](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/setpageloadtimeout.md) method is deprecated. To set the page load timeout, use the new [test.timeouts](https://devexpress.github.io/testcafe/documentation/reference/test-api/test/timeouts.md) method.
+Starting with v1.13.0, the [t.setPageLoadTimeout](https://devexpress.github.io/testcafe/documentation/reference/test-api/testcontroller/setpageloadtimeout.html) method is deprecated. To set the page load timeout, use the new [test.timeouts](https://devexpress.github.io/testcafe/documentation/reference/test-api/test/timeouts.html) method.
 
 ```js
 fixture`Setting Timeouts`
@@ -104,7 +104,7 @@ test
     })
 ```
 
-You can also use `test.timeouts` to set the [pageRequestTimeout](https://devexpress.github.io/testcafe/documentation/reference/configuration-file.md#pagerequesttimeout) and [ajaxRequestTimeout](https://devexpress.github.io/testcafe/documentation/reference/configuration-file.md#ajaxrequesttimeout).
+You can also use `test.timeouts` to set the [pageRequestTimeout](https://devexpress.github.io/testcafe/documentation/reference/configuration-file.html#pagerequesttimeout) and [ajaxRequestTimeout](https://devexpress.github.io/testcafe/documentation/reference/configuration-file.html#ajaxrequesttimeout).
 
 ```js
 fixture`Setting Timeouts`
@@ -267,7 +267,7 @@ You can enable this functionality with a command line, API, or configuration fil
     testcafe chrome test.js --retry-test-pages
     ```
 
-* the [createTestCafe](https://devexpress.github.io/testcafe/documentation/reference/testcafe-api/global/createtestcafe.md) function parameter
+* the [createTestCafe](https://devexpress.github.io/testcafe/documentation/reference/testcafe-api/global/createtestcafe.html) function parameter
 
     ```js
     const createTestCafe = require('testcafe');
@@ -3439,7 +3439,7 @@ The `t.takeScreenshot`, `t.resizeWindow`, `t.resizeWindowToFitDevice` and `t.max
 
 The state of webpage elements can now be extended with custom properties.
 
-We have added the [addCustomDOMProperties](https://devexpress.github.io/testcafe/documentation/test-api/selecting-page-elements/selectors.html#adding-custom-properties-to-element-state)
+We have added the [addCust.htmlOMProperties](https://devexpress.github.io/testcafe/documentation/test-api/selecting-page-elements/selectors.html#adding-custom-properties-to-element-state)
 method to the selector, so that you can add properties to the element state like in the following example.
 
 ```js
@@ -3449,7 +3449,7 @@ fixture `My fixture`
     .page `https://devexpress.github.io/testcafe/example/`;
 
 test('Check Label HTML', async t => {
-    const label = Selector('label').addCustomDOMProperties({
+    const label = Selector('label').addCust.htmlOMProperties({
         innerHTML: el => el.innerHTML
     });
 
